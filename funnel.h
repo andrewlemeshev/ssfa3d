@@ -2,7 +2,7 @@
 The Simple Stupid Funnel Algorithm (SSFA) for 3d.
 Everything are belongs to Mikko Mononen (http://digestingduck.blogspot.ru/2010/03/simple-stupid-funnel-algorithm.html)
 I just implement the 3-rd dimension for the algorithm
-No division, no roots
+No roots, only one divisions it can be avoided if you know your polygon order
 */
 
 #define EPSILON 0.00001f
@@ -97,7 +97,7 @@ float clamp(const float &value, const float &minV, const float &maxV) {
 vec_t closestPoint(const segment_t &line, const vec_t &p) {
   vec_t vec = line.b - line.a;
 
-  float t = dot(p - line.a, vec) / dot(vec, vec);
+  float t = dot(p - line.a, vec) / dot(vec, vec); // it can be avoided
   t = clamp(t, 0.0f, 1.0f);
 
   return line.a + t * vec;
