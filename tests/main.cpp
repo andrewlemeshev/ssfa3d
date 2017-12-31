@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 #include "funnel.h"
 
 int main(int argc, char* argv[]) {
